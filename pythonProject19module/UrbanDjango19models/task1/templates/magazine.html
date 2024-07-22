@@ -1,0 +1,24 @@
+{% extends 'platform.html' %}
+
+{% block pagename %}
+{{block.super}}
+{% endblock %}
+
+
+{% block menu %}
+{{block.super}}
+{% endblock %}
+
+{% block content %}
+<h1>{{ title }}</h1>
+<div class="game-list">
+    {% for game in games %}
+    <div class="game-item">
+        <h2>{{ game.title }}</h2>
+        <p>Стоимость: {{ game.cost }} руб.</p>
+        <p>Описание: {{ game.description }}</p>
+        <button>купить</button>
+    </div>
+    {% endfor %}
+</div>
+{% endblock %}
